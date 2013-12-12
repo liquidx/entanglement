@@ -28,7 +28,7 @@ static const NSTimeInterval kETGReconnectDelay = 1.0;
 @property(nonatomic, strong) PTChannel *activeChannel;
 @property(nonatomic, strong) NSDictionary *properties;
 
-- (id)initWithDelegate:(id<ETGClientDelegate>)delegate;
+- (id)initWithDelegate:(id<ETGDeviceDelegate>)delegate;
 - (void)tryConnect;
 - (void)disconnect;
 
