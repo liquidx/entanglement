@@ -1,0 +1,754 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64501D63185817CA0037AF61 /* ETGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D5F185817CA0037AF61 /* ETGAppDelegate.m */; };
+		64501D64185817CA0037AF61 /* ETGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D61185817CA0037AF61 /* ETGViewController.m */; };
+		64501D65185817CA0037AF61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D62185817CA0037AF61 /* main.m */; };
+		64501D691858181B0037AF61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64501D671858181B0037AF61 /* Images.xcassets */; };
+		64501D791858192A0037AF61 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A29A2F1858174C00F6A706 /* Foundation.framework */; };
+		64501D9A185819390037AF61 /* PTChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D6C185819090037AF61 /* PTChannel.m */; };
+		64501D9B1858193D0037AF61 /* PTProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D6E185819090037AF61 /* PTProtocol.m */; };
+		64501D9D1858195F0037AF61 /* libPeerTalkiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64501D781858192A0037AF61 /* libPeerTalkiOS.a */; };
+		64501DAA18581D300037AF61 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64501DA918581D300037AF61 /* Cocoa.framework */; };
+		64501DB418581D300037AF61 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64501DB218581D300037AF61 /* InfoPlist.strings */; };
+		64501DB618581D300037AF61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501DB518581D300037AF61 /* main.m */; };
+		64501DBA18581D300037AF61 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 64501DB818581D300037AF61 /* Credits.rtf */; };
+		64501DBD18581D300037AF61 /* ETGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501DBC18581D300037AF61 /* ETGAppDelegate.m */; };
+		64501DC018581D300037AF61 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64501DBE18581D300037AF61 /* MainMenu.xib */; };
+		64501DC218581D300037AF61 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64501DC118581D300037AF61 /* Images.xcassets */; };
+		64501DDF18581DD10037AF61 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64501DA918581D300037AF61 /* Cocoa.framework */; };
+		64501DFE18581E040037AF61 /* PTChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D6C185819090037AF61 /* PTChannel.m */; };
+		64501DFF18581E040037AF61 /* PTProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D6E185819090037AF61 /* PTProtocol.m */; };
+		64501E0018581E040037AF61 /* PTUSBHub.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D70185819090037AF61 /* PTUSBHub.m */; };
+		64501E0118581E140037AF61 /* libPeerTalkOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64501DDE18581DD10037AF61 /* libPeerTalkOSX.a */; };
+		64A29A301858174C00F6A706 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A29A2F1858174C00F6A706 /* Foundation.framework */; };
+		64A29A321858174C00F6A706 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A29A311858174C00F6A706 /* CoreGraphics.framework */; };
+		64A29A341858174C00F6A706 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A29A331858174C00F6A706 /* UIKit.framework */; };
+		64D8AF0218595A1600C92C30 /* ETGClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AF0118595A1600C92C30 /* ETGClient.m */; };
+		64D8AF0A18598A7100C92C30 /* ETGMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AF0618598A7100C92C30 /* ETGMessage.m */; };
+		64D8AF0B18598A7100C92C30 /* ETGMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AF0618598A7100C92C30 /* ETGMessage.m */; };
+		64D8AF0C18598A7100C92C30 /* ETGProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AF0718598A7100C92C30 /* ETGProtocol.m */; };
+		64D8AF0D18598A7100C92C30 /* ETGProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 64D8AF0718598A7100C92C30 /* ETGProtocol.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64501D9E185819680037AF61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64A29A241858174C00F6A706 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64501D771858192A0037AF61;
+			remoteInfo = PeerTalkiOS;
+		};
+		64501E0218581E1B0037AF61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64A29A241858174C00F6A706 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64501DDD18581DD10037AF61;
+			remoteInfo = PeerTalkOSX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		64501D761858192A0037AF61 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		64501D5D185817CA0037AF61 /* Entanglement-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Entanglement-Prefix.pch"; path = "ios/Entanglement-Prefix.pch"; sourceTree = "<group>"; };
+		64501D5E185817CA0037AF61 /* ETGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGAppDelegate.h; path = ios/ETGAppDelegate.h; sourceTree = "<group>"; };
+		64501D5F185817CA0037AF61 /* ETGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGAppDelegate.m; path = ios/ETGAppDelegate.m; sourceTree = "<group>"; };
+		64501D60185817CA0037AF61 /* ETGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGViewController.h; path = ios/ETGViewController.h; sourceTree = "<group>"; };
+		64501D61185817CA0037AF61 /* ETGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGViewController.m; path = ios/ETGViewController.m; sourceTree = "<group>"; };
+		64501D62185817CA0037AF61 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ios/main.m; sourceTree = "<group>"; };
+		64501D661858181B0037AF61 /* Entanglement-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Entanglement-Info.plist"; path = "ios/Entanglement-Info.plist"; sourceTree = "<group>"; };
+		64501D671858181B0037AF61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ios/Images.xcassets; sourceTree = "<group>"; };
+		64501D6B185819090037AF61 /* PTChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTChannel.h; path = peertalk/peertalk/PTChannel.h; sourceTree = "<group>"; };
+		64501D6C185819090037AF61 /* PTChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTChannel.m; path = peertalk/peertalk/PTChannel.m; sourceTree = "<group>"; };
+		64501D6D185819090037AF61 /* PTProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTProtocol.h; path = peertalk/peertalk/PTProtocol.h; sourceTree = "<group>"; };
+		64501D6E185819090037AF61 /* PTProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTProtocol.m; path = peertalk/peertalk/PTProtocol.m; sourceTree = "<group>"; };
+		64501D6F185819090037AF61 /* PTUSBHub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTUSBHub.h; path = peertalk/peertalk/PTUSBHub.h; sourceTree = "<group>"; };
+		64501D70185819090037AF61 /* PTUSBHub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTUSBHub.m; path = peertalk/peertalk/PTUSBHub.m; sourceTree = "<group>"; };
+		64501D781858192A0037AF61 /* libPeerTalkiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPeerTalkiOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		64501DA818581D300037AF61 /* EntanglementOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EntanglementOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64501DA918581D300037AF61 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		64501DAC18581D300037AF61 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		64501DAD18581D300037AF61 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		64501DAE18581D300037AF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		64501DB118581D300037AF61 /* EntanglementOSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EntanglementOSX-Info.plist"; sourceTree = "<group>"; };
+		64501DB318581D300037AF61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		64501DB518581D300037AF61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		64501DB718581D300037AF61 /* EntanglementOSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EntanglementOSX-Prefix.pch"; sourceTree = "<group>"; };
+		64501DB918581D300037AF61 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		64501DBB18581D300037AF61 /* ETGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ETGAppDelegate.h; sourceTree = "<group>"; };
+		64501DBC18581D300037AF61 /* ETGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ETGAppDelegate.m; sourceTree = "<group>"; };
+		64501DBF18581D300037AF61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		64501DC118581D300037AF61 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		64501DDE18581DD10037AF61 /* libPeerTalkOSX.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPeerTalkOSX.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A29A2C1858174C00F6A706 /* EntanglementiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EntanglementiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64A29A2F1858174C00F6A706 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		64A29A311858174C00F6A706 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		64A29A331858174C00F6A706 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		64A29A511858174C00F6A706 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		64D8AF0018595A1600C92C30 /* ETGClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGClient.h; sourceTree = "<group>"; };
+		64D8AF0118595A1600C92C30 /* ETGClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETGClient.m; sourceTree = "<group>"; };
+		64D8AF0618598A7100C92C30 /* ETGMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGMessage.m; path = common/ETGMessage.m; sourceTree = "<group>"; };
+		64D8AF0718598A7100C92C30 /* ETGProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGProtocol.m; path = common/ETGProtocol.m; sourceTree = "<group>"; };
+		64D8AF0818598A7100C92C30 /* ETGProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGProtocol.h; path = common/ETGProtocol.h; sourceTree = "<group>"; };
+		64D8AF0918598A7100C92C30 /* ETGMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGMessage.h; path = common/ETGMessage.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64501D751858192A0037AF61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64501D791858192A0037AF61 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64501DA518581D300037AF61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64501E0118581E140037AF61 /* libPeerTalkOSX.a in Frameworks */,
+				64501DAA18581D300037AF61 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64501DDB18581DD10037AF61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64501DDF18581DD10037AF61 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A29A291858174C00F6A706 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64501D9D1858195F0037AF61 /* libPeerTalkiOS.a in Frameworks */,
+				64A29A321858174C00F6A706 /* CoreGraphics.framework in Frameworks */,
+				64A29A341858174C00F6A706 /* UIKit.framework in Frameworks */,
+				64A29A301858174C00F6A706 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64501D6A185818EF0037AF61 /* peertalk */ = {
+			isa = PBXGroup;
+			children = (
+				64501D6B185819090037AF61 /* PTChannel.h */,
+				64501D6C185819090037AF61 /* PTChannel.m */,
+				64501D6D185819090037AF61 /* PTProtocol.h */,
+				64501D6E185819090037AF61 /* PTProtocol.m */,
+				64501D6F185819090037AF61 /* PTUSBHub.h */,
+				64501D70185819090037AF61 /* PTUSBHub.m */,
+			);
+			name = peertalk;
+			sourceTree = "<group>";
+		};
+		64501DAB18581D300037AF61 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64501DAC18581D300037AF61 /* AppKit.framework */,
+				64501DAD18581D300037AF61 /* CoreData.framework */,
+				64501DAE18581D300037AF61 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		64501DAF18581D300037AF61 /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				64501DBB18581D300037AF61 /* ETGAppDelegate.h */,
+				64501DBC18581D300037AF61 /* ETGAppDelegate.m */,
+				64D8AF0018595A1600C92C30 /* ETGClient.h */,
+				64D8AF0118595A1600C92C30 /* ETGClient.m */,
+				64501DC118581D300037AF61 /* Images.xcassets */,
+				64501DBE18581D300037AF61 /* MainMenu.xib */,
+				64501DB018581D300037AF61 /* Supporting Files */,
+			);
+			path = mac;
+			sourceTree = "<group>";
+		};
+		64501DB018581D300037AF61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64501DB118581D300037AF61 /* EntanglementOSX-Info.plist */,
+				64501DB218581D300037AF61 /* InfoPlist.strings */,
+				64501DB518581D300037AF61 /* main.m */,
+				64501DB718581D300037AF61 /* EntanglementOSX-Prefix.pch */,
+				64501DB818581D300037AF61 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		64A29A231858174C00F6A706 = {
+			isa = PBXGroup;
+			children = (
+				64D8AF0518598A6400C92C30 /* common */,
+				64A29A671858177200F6A706 /* ios */,
+				64501DAF18581D300037AF61 /* mac */,
+				64501D6A185818EF0037AF61 /* peertalk */,
+				64A29A2E1858174C00F6A706 /* Frameworks */,
+				64A29A2D1858174C00F6A706 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64A29A2D1858174C00F6A706 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64A29A2C1858174C00F6A706 /* EntanglementiOS.app */,
+				64501D781858192A0037AF61 /* libPeerTalkiOS.a */,
+				64501DA818581D300037AF61 /* EntanglementOSX.app */,
+				64501DDE18581DD10037AF61 /* libPeerTalkOSX.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64A29A2E1858174C00F6A706 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64A29A2F1858174C00F6A706 /* Foundation.framework */,
+				64A29A311858174C00F6A706 /* CoreGraphics.framework */,
+				64A29A331858174C00F6A706 /* UIKit.framework */,
+				64A29A511858174C00F6A706 /* XCTest.framework */,
+				64501DA918581D300037AF61 /* Cocoa.framework */,
+				64501DAB18581D300037AF61 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64A29A671858177200F6A706 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				64501D661858181B0037AF61 /* Entanglement-Info.plist */,
+				64501D5D185817CA0037AF61 /* Entanglement-Prefix.pch */,
+				64501D5E185817CA0037AF61 /* ETGAppDelegate.h */,
+				64501D5F185817CA0037AF61 /* ETGAppDelegate.m */,
+				64501D60185817CA0037AF61 /* ETGViewController.h */,
+				64501D61185817CA0037AF61 /* ETGViewController.m */,
+				64501D671858181B0037AF61 /* Images.xcassets */,
+				64501D62185817CA0037AF61 /* main.m */,
+			);
+			name = ios;
+			sourceTree = "<group>";
+		};
+		64D8AF0518598A6400C92C30 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				64D8AF0918598A7100C92C30 /* ETGMessage.h */,
+				64D8AF0618598A7100C92C30 /* ETGMessage.m */,
+				64D8AF0818598A7100C92C30 /* ETGProtocol.h */,
+				64D8AF0718598A7100C92C30 /* ETGProtocol.m */,
+			);
+			name = common;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		64501DDC18581DD10037AF61 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		64501D771858192A0037AF61 /* PeerTalkiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64501D941858192B0037AF61 /* Build configuration list for PBXNativeTarget "PeerTalkiOS" */;
+			buildPhases = (
+				64501D741858192A0037AF61 /* Sources */,
+				64501D751858192A0037AF61 /* Frameworks */,
+				64501D761858192A0037AF61 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PeerTalkiOS;
+			productName = PeerTalkiOS;
+			productReference = 64501D781858192A0037AF61 /* libPeerTalkiOS.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		64501DA718581D300037AF61 /* EntanglementOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64501DD418581D300037AF61 /* Build configuration list for PBXNativeTarget "EntanglementOSX" */;
+			buildPhases = (
+				64501DA418581D300037AF61 /* Sources */,
+				64501DA518581D300037AF61 /* Frameworks */,
+				64501DA618581D300037AF61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64501E0318581E1B0037AF61 /* PBXTargetDependency */,
+			);
+			name = EntanglementOSX;
+			productName = EntanglementOSX;
+			productReference = 64501DA818581D300037AF61 /* EntanglementOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		64501DDD18581DD10037AF61 /* PeerTalkOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64501DF818581DD10037AF61 /* Build configuration list for PBXNativeTarget "PeerTalkOSX" */;
+			buildPhases = (
+				64501DDA18581DD10037AF61 /* Sources */,
+				64501DDB18581DD10037AF61 /* Frameworks */,
+				64501DDC18581DD10037AF61 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PeerTalkOSX;
+			productName = PeerTalkOSX;
+			productReference = 64501DDE18581DD10037AF61 /* libPeerTalkOSX.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		64A29A2B1858174C00F6A706 /* EntanglementiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64A29A611858174C00F6A706 /* Build configuration list for PBXNativeTarget "EntanglementiOS" */;
+			buildPhases = (
+				64A29A281858174C00F6A706 /* Sources */,
+				64A29A291858174C00F6A706 /* Frameworks */,
+				64A29A2A1858174C00F6A706 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64501D9F185819680037AF61 /* PBXTargetDependency */,
+			);
+			name = EntanglementiOS;
+			productName = Entanglement;
+			productReference = 64A29A2C1858174C00F6A706 /* EntanglementiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64A29A241858174C00F6A706 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ETG;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Alastair Tse";
+			};
+			buildConfigurationList = 64A29A271858174C00F6A706 /* Build configuration list for PBXProject "Entanglement" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64A29A231858174C00F6A706;
+			productRefGroup = 64A29A2D1858174C00F6A706 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64A29A2B1858174C00F6A706 /* EntanglementiOS */,
+				64501D771858192A0037AF61 /* PeerTalkiOS */,
+				64501DA718581D300037AF61 /* EntanglementOSX */,
+				64501DDD18581DD10037AF61 /* PeerTalkOSX */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64501DA618581D300037AF61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64501DB418581D300037AF61 /* InfoPlist.strings in Resources */,
+				64501DC218581D300037AF61 /* Images.xcassets in Resources */,
+				64501DBA18581D300037AF61 /* Credits.rtf in Resources */,
+				64501DC018581D300037AF61 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A29A2A1858174C00F6A706 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64501D691858181B0037AF61 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64501D741858192A0037AF61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64501D9A185819390037AF61 /* PTChannel.m in Sources */,
+				64501D9B1858193D0037AF61 /* PTProtocol.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64501DA418581D300037AF61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64D8AF0B18598A7100C92C30 /* ETGMessage.m in Sources */,
+				64501DB618581D300037AF61 /* main.m in Sources */,
+				64D8AF0218595A1600C92C30 /* ETGClient.m in Sources */,
+				64D8AF0D18598A7100C92C30 /* ETGProtocol.m in Sources */,
+				64501DBD18581D300037AF61 /* ETGAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64501DDA18581DD10037AF61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64501DFE18581E040037AF61 /* PTChannel.m in Sources */,
+				64501E0018581E040037AF61 /* PTUSBHub.m in Sources */,
+				64501DFF18581E040037AF61 /* PTProtocol.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64A29A281858174C00F6A706 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64D8AF0A18598A7100C92C30 /* ETGMessage.m in Sources */,
+				64501D64185817CA0037AF61 /* ETGViewController.m in Sources */,
+				64501D65185817CA0037AF61 /* main.m in Sources */,
+				64D8AF0C18598A7100C92C30 /* ETGProtocol.m in Sources */,
+				64501D63185817CA0037AF61 /* ETGAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		64501D9F185819680037AF61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64501D771858192A0037AF61 /* PeerTalkiOS */;
+			targetProxy = 64501D9E185819680037AF61 /* PBXContainerItemProxy */;
+		};
+		64501E0318581E1B0037AF61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64501DDD18581DD10037AF61 /* PeerTalkOSX */;
+			targetProxy = 64501E0218581E1B0037AF61 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		64501DB218581D300037AF61 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64501DB318581D300037AF61 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		64501DB818581D300037AF61 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64501DB918581D300037AF61 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		64501DBE18581D300037AF61 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64501DBF18581D300037AF61 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64501D951858192B0037AF61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DSTROOT = /tmp/PeerTalkiOS.dst;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.0;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		64501D961858192B0037AF61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DSTROOT = /tmp/PeerTalkiOS.dst;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos7.0;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		64501DD518581D300037AF61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mac/EntanglementOSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "mac/EntanglementOSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		64501DD618581D300037AF61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "mac/EntanglementOSX-Prefix.pch";
+				INFOPLIST_FILE = "mac/EntanglementOSX-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		64501DF918581DD10037AF61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		64501DFA18581DD10037AF61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		64A29A5F1858174C00F6A706 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		64A29A601858174C00F6A706 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64A29A621858174C00F6A706 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alastair Tse (W9XXKWC3T3)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios/Entanglement-Prefix.pch";
+				INFOPLIST_FILE = "ios/Entanglement-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		64A29A631858174C00F6A706 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alastair Tse (W9XXKWC3T3)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ios/Entanglement-Prefix.pch";
+				INFOPLIST_FILE = "ios/Entanglement-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64501D941858192B0037AF61 /* Build configuration list for PBXNativeTarget "PeerTalkiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64501D951858192B0037AF61 /* Debug */,
+				64501D961858192B0037AF61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64501DD418581D300037AF61 /* Build configuration list for PBXNativeTarget "EntanglementOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64501DD518581D300037AF61 /* Debug */,
+				64501DD618581D300037AF61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64501DF818581DD10037AF61 /* Build configuration list for PBXNativeTarget "PeerTalkOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64501DF918581DD10037AF61 /* Debug */,
+				64501DFA18581DD10037AF61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64A29A271858174C00F6A706 /* Build configuration list for PBXProject "Entanglement" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64A29A5F1858174C00F6A706 /* Debug */,
+				64A29A601858174C00F6A706 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64A29A611858174C00F6A706 /* Build configuration list for PBXNativeTarget "EntanglementiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64A29A621858174C00F6A706 /* Debug */,
+				64A29A631858174C00F6A706 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64A29A241858174C00F6A706 /* Project object */;
+}
