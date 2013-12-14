@@ -10,6 +10,7 @@
 #import "ETGMessage.h"
 
 @protocol ETGClientDelegate;
+@class ETGDevice;
 
 /**
  * Entanglement protocol client.
@@ -25,13 +26,14 @@
 - (void)start;
 
 - (void)broadcastMessageToConnectedChannels:(ETGMessage *)message;
+- (void)sendMessage:(ETGMessage *)message toDeviceID:(NSInteger)deviceID;
 
 @end
 
 @protocol ETGClientDelegate <NSObject>
 
-- (void)client:(ETGClient *)client didReceiveMessage:(ETGMessage *)message;
-- (void)client:(ETGClient *)client channelDidConnect:(PTChannel *)channel;
-- (void)client:(ETGClient *)client channelDidDisconnect:(PTChannel *)channel;
+- (void)client:(ETGClient *)client didReceiveMessage:(ETGMessage *)message fromDevice:(ETGDevice *)device;
+- (void)client:(ETGClient *)client deviceDidConnect:(ETGDevice *)device;
+- (void)client:(ETGClient *)client deviceDidDisconnect:(ETGDevice *)device;
 
 @end

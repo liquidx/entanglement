@@ -12,6 +12,47 @@
 
 @implementation ETGMessage
 
+- (id)initWithPayload:(dispatch_data_t)payload messageType:(uint32_t)messageType {
+  self = [super init];
+  if (self) {
+    self.messageType = messageType;
+    self.tag = 0;
+    self.payload = payload;
+  }
+  return self;
+}
+
+- (id)initWithData:(NSData *)data messageType:(uint32_t)messageType {
+  self = [super init];
+  if (self) {
+    self.messageType = messageType;
+    self.tag = 0;
+    self.payload = [data createReferencingDispatchData];
+  }
+  return self;
+}
+
+- (id)initWithPayload:(dispatch_data_t)payload {
+  return [self initWithPayload:payload messageType:kETGMessageTypeUnknown];
+}
+
+- (id)initWithData:(NSData *)data {
+  return [self initWithData:data messageType:kETGMessageTypeUnknown];
+}
+
+
+- (NSData *)data {
+  if (!_payload) return nil;
+
+  //  return [NSData dataWithContentsOfDispatchData:self.payload];
+  __block NSMutableData *data = [NSMutableData dataWithCapacity:dispatch_data_get_size(self.payload)];
+  dispatch_data_apply(self.payload, ^bool(dispatch_data_t region, size_t offset, const void *buffer, size_t size) {
+    [data appendBytes:buffer length:size];
+    return YES;
+  });
+  return data;
+}
+
 - (void)sendWithChannel:(PTChannel *)channel completed:(void(^)(NSError *error))callback {
   [channel sendFrameOfType:_messageType
                        tag:_tag
@@ -25,37 +66,28 @@
 @implementation ETGImageMessage
 
 - (id)initWithPayload:(dispatch_data_t)payload {
-  self = [super init];
-  if (self) {
-    self.messageType = kETGMessageTypeImage;
-    self.tag = 0;
-    self.payload = payload;
-  }
-  return self;
+  return [self initWithPayload:payload messageType:kETGMessageTypeImage];
 }
 
 - (id)initWithData:(NSData *)data {
-  self = [super init];
-  if (self) {
-    self.messageType = kETGMessageTypeImage;
-    self.tag = 0;
-    self.payload = [data createReferencingDispatchData];
-//    void *bytes = CFAllocatorAllocate(NULL, [data length], 0);
-//    self.payload = dispatch_data_create(bytes, [data length], nil, ^{
-//      CFAllocatorDeallocate(NULL, bytes);
-//    });
-  }
-  return self;
+  return [self initWithData:data messageType:kETGMessageTypeImage];
 }
 
-- (NSData *)data {
-//  return [NSData dataWithContentsOfDispatchData:self.payload];
-  __block NSMutableData *data = [NSMutableData dataWithCapacity:dispatch_data_get_size(self.payload)];
-  dispatch_data_apply(self.payload, ^bool(dispatch_data_t region, size_t offset, const void *buffer, size_t size) {
-    [data appendBytes:buffer length:size];
-    return YES;
-  });
-  return data;
+@end
+
+@implementation ETGDeviceInfoMessage
+
+- (id)initWithDeviceInfo:(NSDictionary *)deviceInfo {
+  return [self initWithData:[NSJSONSerialization dataWithJSONObject:deviceInfo options:0 error:NULL]
+                messageType:kETGMessageTypeDeviceInfo];
+}
+
+- (id)initWithPayload:(dispatch_data_t)payload {
+  return [self initWithPayload:payload messageType:kETGMessageTypeDeviceInfo];
+}
+
+- (NSDictionary *)deviceInfo {
+  return [NSJSONSerialization JSONObjectWithData:[self data] options:0 error:NULL];
 }
 
 @end

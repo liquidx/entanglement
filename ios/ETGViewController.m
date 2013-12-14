@@ -45,13 +45,14 @@
                  NSLog(@"Connected");
                  _serverChannel = channel;
                }];
-
 }
 
 - (void)dealloc {
   [_peerChannel close];
   [_serverChannel close];
 }
+
+#pragma mark -
 
 - (void)tap:(UITapGestureRecognizer *)tapRecognizer {
   if (tapRecognizer.state == UIGestureRecognizerStateEnded) {
@@ -65,6 +66,24 @@
       }
     }];
   }
+}
+
+- (void)sendDeviceInfo {
+  CGSize size = [[UIScreen mainScreen] bounds].size;
+  CGFloat scale = [[UIScreen mainScreen] scale];
+  UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+  NSDictionary *deviceInfo = @{
+    @"width": @(size.width),
+    @"height": @(size.height),
+    @"scale": @(scale),
+    @"orientation": @(orientation),
+    @"name": [[UIDevice currentDevice] name],
+    @"device": [[UIDevice currentDevice] model],
+    @"os": [[UIDevice currentDevice] systemVersion],
+  };
+
+  ETGDeviceInfoMessage *message = [[ETGDeviceInfoMessage alloc] initWithDeviceInfo:deviceInfo];
+  [message sendWithChannel:_peerChannel completed:NULL];
 }
 
 #pragma mark - PTChannelDelegate
@@ -136,6 +155,9 @@
   _peerChannel = otherChannel;
   _peerChannel.userInfo = address;
   NSLog(@"Connected to %@", address);
+
+  // Send initial packet with device info.
+  [self sendDeviceInfo];
 }
 
 

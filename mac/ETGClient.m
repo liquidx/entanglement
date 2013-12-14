@@ -10,74 +10,7 @@
 #import "PTChannel.h"
 #import "ETGProtocol.h"
 #import "ETGMessage.h"
-
-static const NSTimeInterval kETGReconnectDelay = 1.0;
-
-#pragma mark - Device
-
-@class ETGDevice;
-
-@protocol ETGDeviceDelegate <PTChannelDelegate>
-- (void)deviceDidConnect:(ETGDevice *)device;
-- (void)deviceDidDisconnect:(ETGDevice *)device;
-@end
-
-@interface ETGDevice : NSObject
-@property(nonatomic, weak) id<ETGDeviceDelegate> delegate;
-@property(nonatomic, assign) NSInteger deviceID;
-@property(nonatomic, strong) PTChannel *activeChannel;
-@property(nonatomic, strong) NSDictionary *properties;
-
-- (id)initWithDelegate:(id<ETGDeviceDelegate>)delegate;
-- (void)tryConnect;
-- (void)disconnect;
-
-@end
-
-@implementation ETGDevice
-
-- (id)initWithDelegate:(id<ETGDeviceDelegate>)delegate {
-  self = [super init];
-  if (self) {
-    _delegate = delegate;
-  }
-  return self;
-}
-
-- (void)disconnect {
-  [_delegate deviceDidDisconnect:self];
-  [_activeChannel close];
-  _activeChannel = nil;
-}
-
-- (void)tryConnect {
-  if (_activeChannel) return;  // Already connected.
-
-  PTChannel *channel = [PTChannel channelWithDelegate:_delegate];
-  channel.userInfo = @(_deviceID);
-
-  [channel connectToPort:ETGProtocolPort
-              overUSBHub:[PTUSBHub sharedHub]
-                deviceID:@(_deviceID)
-                callback:^(NSError *error) {
-                  if (error) {
-                    // Failed to connect, try again.
-                    NSLog(@"Failed to connect to device #%ld: %@", _deviceID, error);
-                    [self performSelector:@selector(tryConnect)
-                               withObject:nil
-                               afterDelay:kETGReconnectDelay];
-                     return;
-                  }
-
-                  NSLog(@"Connect device %ld with channel.", _deviceID);
-                  // Successfully connected.
-                  _activeChannel = channel;
-                  [_delegate deviceDidConnect:self];
-                }];
-
-}
-
-@end
+#import "ETGDevice.h"
 
 #pragma mark - Client
 
@@ -161,6 +94,14 @@ static const NSTimeInterval kETGReconnectDelay = 1.0;
   }
 }
 
+- (void)sendMessage:(ETGMessage *)message toDeviceID:(NSInteger)deviceID {
+  for (ETGDevice *device in _attachedDevices) {
+    if ([device deviceID] == deviceID && [device activeChannel]) {
+      [message sendWithChannel:[device activeChannel] completed:nil];
+    }
+  }
+}
+
 #pragma mark -
 
 - (ETGDevice *)deviceWithChannel:(PTChannel *)channel {
@@ -178,15 +119,16 @@ shouldAcceptFrameOfType:(uint32_t)type
            payloadSize:(uint32_t)payloadSize {
 
   if (type == kETGMessageTypeRequestImage) {
-    NSLog(@"image request received");
+    NSLog(@"<< RequestImage Received");
+    return YES;
+  } else if (type == kETGMessageTypeDeviceInfo) {
+    NSLog(@"<< DeviceInfo Received");
     return YES;
   }
 
-  NSLog(@"Unexpected frame of type %u", type);
   ETGDevice *device = [self deviceWithChannel:channel];
   [device disconnect];
   [device tryConnect];
-
   return NO;
 }
 
@@ -194,16 +136,18 @@ shouldAcceptFrameOfType:(uint32_t)type
  didReceiveFrameOfType:(uint32_t)type
                    tag:(uint32_t)tag
                payload:(dispatch_data_t)payload {
-  NSLog(@"received %@, %u, %u, %@", channel, type, tag, payload);
+  //NSLog(@"received %@, %u, %u, %@", channel, type, tag, payload);
   ETGMessage *message = nil;
   if (type == kETGMessageTypeImage) {
     message = [[ETGImageMessage alloc] initWithPayload:payload];
   } else if (type == kETGMessageTypeRequestImage) {
     message = [[ETGMessage alloc] init];
     message.messageType = kETGMessageTypeRequestImage;
+  } else if (type == kETGMessageTypeDeviceInfo) {
+    message = [[ETGDeviceInfoMessage alloc] initWithPayload:payload];
   }
 
-  [_delegate client:self didReceiveMessage:message];
+  [_delegate client:self didReceiveMessage:message fromDevice:[self deviceWithChannel:channel]];
 }
 
 - (void)ioFrameChannel:(PTChannel*)channel didEndWithError:(NSError*)error {
@@ -216,11 +160,11 @@ shouldAcceptFrameOfType:(uint32_t)type
 #pragma mark - 
 
 - (void)deviceDidConnect:(ETGDevice *)device {
-  [_delegate client:self channelDidConnect:[device activeChannel]];
+  [_delegate client:self deviceDidConnect:device];
 }
 
 - (void)deviceDidDisconnect:(ETGDevice *)device {
-  [_delegate client:self channelDidDisconnect:[device activeChannel]];
+  [_delegate client:self deviceDidDisconnect:device];
 
 }
 

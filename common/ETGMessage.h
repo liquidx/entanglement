@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 
 enum {
+  kETGMessageTypeUnknown = 0,
   kETGMessageTypeImage = 1,
-  kETGMessageTypeRequestImage = 2
+  kETGMessageTypeRequestImage = 2,
+  kETGMessageTypeDeviceInfo = 3
 };
 
 @class PTChannel;
@@ -22,14 +24,24 @@ enum {
 @property (nonatomic, assign) uint32_t tag;
 @property (nonatomic, strong) dispatch_data_t payload;
 
+- (id)initWithPayload:(dispatch_data_t)payload messageType:(uint32_t)messageType;
+- (id)initWithData:(NSData *)data messageType:(uint32_t)messageType;
+
+- (id)initWithPayload:(dispatch_data_t)payload;
+- (id)initWithData:(NSData *)data;
+
+- (NSData *)data;
+
 - (void)sendWithChannel:(PTChannel *)channel completed:(void(^)(NSError *error))callback;
 
 @end
 
 @interface ETGImageMessage : ETGMessage
+@end
 
-- (id)initWithPayload:(dispatch_data_t)payload;
-- (id)initWithData:(NSData *)data;
-- (NSData *)data;
+@interface ETGDeviceInfoMessage : ETGMessage
+
+- (id)initWithDeviceInfo:(NSDictionary *)deviceInfo;
+- (NSDictionary *)deviceInfo;
 
 @end
