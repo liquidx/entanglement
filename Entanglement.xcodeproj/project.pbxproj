@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		643AC03C185C1C0E0016D3E9 /* ETGDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 643AC03A185C1C060016D3E9 /* ETGDevice.m */; };
 		64501D63185817CA0037AF61 /* ETGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D5F185817CA0037AF61 /* ETGAppDelegate.m */; };
 		64501D64185817CA0037AF61 /* ETGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D61185817CA0037AF61 /* ETGViewController.m */; };
 		64501D65185817CA0037AF61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D62185817CA0037AF61 /* main.m */; };
@@ -67,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		643AC039185C1C060016D3E9 /* ETGDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGDevice.h; sourceTree = "<group>"; };
+		643AC03A185C1C060016D3E9 /* ETGDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETGDevice.m; sourceTree = "<group>"; };
 		64501D5D185817CA0037AF61 /* Entanglement-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Entanglement-Prefix.pch"; path = "ios/Entanglement-Prefix.pch"; sourceTree = "<group>"; };
 		64501D5E185817CA0037AF61 /* ETGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGAppDelegate.h; path = ios/ETGAppDelegate.h; sourceTree = "<group>"; };
 		64501D5F185817CA0037AF61 /* ETGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGAppDelegate.m; path = ios/ETGAppDelegate.m; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				64501DBC18581D300037AF61 /* ETGAppDelegate.m */,
 				64D8AF0018595A1600C92C30 /* ETGClient.h */,
 				64D8AF0118595A1600C92C30 /* ETGClient.m */,
+				643AC039185C1C060016D3E9 /* ETGDevice.h */,
+				643AC03A185C1C060016D3E9 /* ETGDevice.m */,
 				64501DC118581D300037AF61 /* Images.xcassets */,
 				64501DBE18581D300037AF61 /* MainMenu.xib */,
 				64501DB018581D300037AF61 /* Supporting Files */,
@@ -415,6 +420,7 @@
 				64501DB618581D300037AF61 /* main.m in Sources */,
 				64D8AF0218595A1600C92C30 /* ETGClient.m in Sources */,
 				64D8AF0D18598A7100C92C30 /* ETGProtocol.m in Sources */,
+				643AC03C185C1C0E0016D3E9 /* ETGDevice.m in Sources */,
 				64501DBD18581D300037AF61 /* ETGAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
