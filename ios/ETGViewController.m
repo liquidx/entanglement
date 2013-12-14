@@ -30,6 +30,8 @@
 
   _imageView = [[UIImageView alloc] initWithFrame:[[self view] bounds]];
   _imageView.backgroundColor = [UIColor colorWithWhite:0.2 alpha:1.0];
+  _imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+  _imageView.contentMode = UIViewContentModeScaleAspectFill;
   [self.view addSubview:_imageView];
 
   _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
@@ -38,6 +40,11 @@
   _panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
   _lastPoint = CGPointZero;
   [self.view addGestureRecognizer:_panRecognizer];
+
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(deviceDidRotate:)
+                                               name:UIApplicationDidChangeStatusBarOrientationNotification
+                                             object:nil];
 
   // Create a new channel that is listening on our IPv4 port
   PTChannel *channel = [PTChannel channelWithDelegate:self];
@@ -48,14 +55,23 @@
                    NSLog(@"Failed to connect: %@", error);
                    return;
                  }
-                 NSLog(@"Connected");
+                 NSLog(@"USB Connected");
                  _serverChannel = channel;
                }];
 }
 
 - (void)dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
   [_peerChannel close];
   [_serverChannel close];
+}
+
+- (BOOL)shouldAutorotate {
+  return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+  return UIInterfaceOrientationMaskAll;
 }
 
 #pragma mark -
@@ -101,10 +117,21 @@
   }
 }
 
+- (void)deviceDidRotate:(NSNotification *)notification {
+  [self sendDeviceInfo];
+}
+
 - (void)sendDeviceInfo {
   CGSize size = [[UIScreen mainScreen] bounds].size;
   CGFloat scale = [[UIScreen mainScreen] scale];
   UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+  if (UIInterfaceOrientationIsLandscape(orientation)) {
+    CGSize rotatedSize = size;
+    rotatedSize.width = size.height;
+    rotatedSize.height = size.width;
+    size = rotatedSize;
+  }
+
   NSDictionary *deviceInfo = @{
     @"width": @(size.width),
     @"height": @(size.height),
@@ -168,7 +195,7 @@
     NSLog(@"Error occurred while ending: %@", error);
     return;
   }
-  NSLog(@"Disconnected");
+  NSLog(@"Channel disconnected");
 }
 
 // For listening channels, this method is invoked when a new connection has been
@@ -187,7 +214,7 @@
   // (owned by its parent dispatch queue) until they are closed.
   _peerChannel = otherChannel;
   _peerChannel.userInfo = address;
-  NSLog(@"Connected to %@", address);
+  NSLog(@"Channel connected to %@", address);
 
   // Send initial packet with device info.
   [self sendDeviceInfo];

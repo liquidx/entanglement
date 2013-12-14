@@ -159,7 +159,9 @@ shouldAcceptFrameOfType:(uint32_t)type
   ETGDevice *device = [self deviceWithChannel:channel];
   [device disconnect];
   [device tryConnect];
-  NSLog(@"Channel ended with Error: %@", error);
+  if (error) {
+    NSLog(@"Channel ended with Error: %@", error);
+  }
 }
 
 #pragma mark - 

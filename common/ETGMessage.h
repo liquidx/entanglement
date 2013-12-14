@@ -14,7 +14,6 @@ enum {
   kETGMessageTypeRequestImage = 2,
   kETGMessageTypeDeviceInfo = 3,
   kETGMessageTypeTranslateViewport = 4,  // translates the viewport on the device.
-
 };
 
 @class PTChannel;
