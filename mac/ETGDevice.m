@@ -39,7 +39,7 @@ static const NSTimeInterval kETGReconnectDelay = 1.0;
                 callback:^(NSError *error) {
                   if (error) {
                     // Failed to connect, try again.
-                    NSLog(@"Failed to connect to device #%ld: %@", _deviceID, error);
+                    //NSLog(@"Failed to connect to device #%ld: %@", _deviceID, error);
                     [self performSelector:@selector(tryConnect)
                                withObject:nil
                                afterDelay:kETGReconnectDelay];

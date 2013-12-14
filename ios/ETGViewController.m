@@ -15,6 +15,8 @@
 
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UITapGestureRecognizer *tapRecognizer;
+@property(nonatomic, strong) UIPanGestureRecognizer *panRecognizer;
+@property(nonatomic, assign) CGPoint lastPoint;
 
 @end
 
@@ -32,6 +34,10 @@
 
   _tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
   [self.view addGestureRecognizer:_tapRecognizer];
+
+  _panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
+  _lastPoint = CGPointZero;
+  [self.view addGestureRecognizer:_panRecognizer];
 
   // Create a new channel that is listening on our IPv4 port
   PTChannel *channel = [PTChannel channelWithDelegate:self];
@@ -65,6 +71,33 @@
         NSLog(@"Error sending request");
       }
     }];
+  }
+}
+
+- (void)pan:(UIPanGestureRecognizer *)panRecognizer {
+  switch (panRecognizer.state) {
+    case UIGestureRecognizerStateBegan: {
+      _lastPoint = CGPointZero;
+      break;
+    }
+    case UIGestureRecognizerStateChanged: {
+      CGPoint point = [panRecognizer translationInView:self.view];
+      CGPoint diff = CGPointMake(-(point.x - _lastPoint.x), -(point.y - _lastPoint.y));
+      ETGTranslateViewportMessage *message = [[ETGTranslateViewportMessage alloc] initWithTranslation:diff];
+      [message sendWithChannel:_peerChannel completed:^(NSError *error) {
+        if (error) {
+          NSLog(@"Error sending request");
+        }
+      }];
+      _lastPoint = point;
+      break;
+    }
+    case UIGestureRecognizerStateEnded: {
+      _lastPoint = CGPointZero;
+      break;
+    }
+    default:
+      break;
   }
 }
 

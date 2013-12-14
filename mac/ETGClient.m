@@ -124,6 +124,9 @@ shouldAcceptFrameOfType:(uint32_t)type
   } else if (type == kETGMessageTypeDeviceInfo) {
     NSLog(@"<< DeviceInfo Received");
     return YES;
+  } else if (type == kETGMessageTypeTranslateViewport) {
+    NSLog(@"<< TranslateViewport Received");
+    return YES;
   }
 
   ETGDevice *device = [self deviceWithChannel:channel];
@@ -145,6 +148,8 @@ shouldAcceptFrameOfType:(uint32_t)type
     message.messageType = kETGMessageTypeRequestImage;
   } else if (type == kETGMessageTypeDeviceInfo) {
     message = [[ETGDeviceInfoMessage alloc] initWithPayload:payload];
+  } else if (type == kETGMessageTypeTranslateViewport) {
+    message = [[ETGTranslateViewportMessage alloc] initWithPayload:payload];
   }
 
   [_delegate client:self didReceiveMessage:message fromDevice:[self deviceWithChannel:channel]];

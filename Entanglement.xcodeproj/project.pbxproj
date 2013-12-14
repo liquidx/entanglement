@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		643AC03C185C1C0E0016D3E9 /* ETGDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 643AC03A185C1C060016D3E9 /* ETGDevice.m */; };
+		643AC043185CD1EC0016D3E9 /* ETGOSXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 643AC041185CD1EC0016D3E9 /* ETGOSXMainViewController.m */; };
+		643AC044185CD1EC0016D3E9 /* ETGOSXMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 643AC042185CD1EC0016D3E9 /* ETGOSXMainViewController.xib */; };
 		64501D63185817CA0037AF61 /* ETGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D5F185817CA0037AF61 /* ETGAppDelegate.m */; };
 		64501D64185817CA0037AF61 /* ETGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D61185817CA0037AF61 /* ETGViewController.m */; };
 		64501D65185817CA0037AF61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64501D62185817CA0037AF61 /* main.m */; };
@@ -70,6 +72,9 @@
 /* Begin PBXFileReference section */
 		643AC039185C1C060016D3E9 /* ETGDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGDevice.h; sourceTree = "<group>"; };
 		643AC03A185C1C060016D3E9 /* ETGDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETGDevice.m; sourceTree = "<group>"; };
+		643AC040185CD1EC0016D3E9 /* ETGOSXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ETGOSXMainViewController.h; sourceTree = "<group>"; };
+		643AC041185CD1EC0016D3E9 /* ETGOSXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ETGOSXMainViewController.m; sourceTree = "<group>"; };
+		643AC042185CD1EC0016D3E9 /* ETGOSXMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ETGOSXMainViewController.xib; sourceTree = "<group>"; };
 		64501D5D185817CA0037AF61 /* Entanglement-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Entanglement-Prefix.pch"; path = "ios/Entanglement-Prefix.pch"; sourceTree = "<group>"; };
 		64501D5E185817CA0037AF61 /* ETGAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ETGAppDelegate.h; path = ios/ETGAppDelegate.h; sourceTree = "<group>"; };
 		64501D5F185817CA0037AF61 /* ETGAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ETGAppDelegate.m; path = ios/ETGAppDelegate.m; sourceTree = "<group>"; };
@@ -188,6 +193,9 @@
 				64501DC118581D300037AF61 /* Images.xcassets */,
 				64501DBE18581D300037AF61 /* MainMenu.xib */,
 				64501DB018581D300037AF61 /* Supporting Files */,
+				643AC040185CD1EC0016D3E9 /* ETGOSXMainViewController.h */,
+				643AC041185CD1EC0016D3E9 /* ETGOSXMainViewController.m */,
+				643AC042185CD1EC0016D3E9 /* ETGOSXMainViewController.xib */,
 			);
 			path = mac;
 			sourceTree = "<group>";
@@ -386,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64501DB418581D300037AF61 /* InfoPlist.strings in Resources */,
+				643AC044185CD1EC0016D3E9 /* ETGOSXMainViewController.xib in Resources */,
 				64501DC218581D300037AF61 /* Images.xcassets in Resources */,
 				64501DBA18581D300037AF61 /* Credits.rtf in Resources */,
 				64501DC018581D300037AF61 /* MainMenu.xib in Resources */,
@@ -416,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				643AC043185CD1EC0016D3E9 /* ETGOSXMainViewController.m in Sources */,
 				64D8AF0B18598A7100C92C30 /* ETGMessage.m in Sources */,
 				64501DB618581D300037AF61 /* main.m in Sources */,
 				64D8AF0218595A1600C92C30 /* ETGClient.m in Sources */,

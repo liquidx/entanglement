@@ -91,3 +91,23 @@
 }
 
 @end
+
+@implementation ETGTranslateViewportMessage
+
+- (id)initWithPayload:(dispatch_data_t)payload {
+  return [self initWithPayload:payload messageType:kETGMessageTypeTranslateViewport];
+}
+
+- (id)initWithTranslation:(CGPoint)translation {
+  NSDictionary *point = @{@"x": @(translation.x), @"y": @(translation.y)};
+  return [self initWithData:[NSJSONSerialization dataWithJSONObject:point options:0 error:NULL]
+                messageType:kETGMessageTypeTranslateViewport];
+}
+
+- (CGPoint)translation {
+  NSDictionary *point = [NSJSONSerialization JSONObjectWithData:[self data] options:0 error:NULL];
+  return CGPointMake([point[@"x"] doubleValue], [point[@"y"] doubleValue]);
+}
+
+
+@end

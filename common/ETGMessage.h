@@ -12,7 +12,9 @@ enum {
   kETGMessageTypeUnknown = 0,
   kETGMessageTypeImage = 1,
   kETGMessageTypeRequestImage = 2,
-  kETGMessageTypeDeviceInfo = 3
+  kETGMessageTypeDeviceInfo = 3,
+  kETGMessageTypeTranslateViewport = 4,  // translates the viewport on the device.
+
 };
 
 @class PTChannel;
@@ -44,4 +46,9 @@ enum {
 - (id)initWithDeviceInfo:(NSDictionary *)deviceInfo;
 - (NSDictionary *)deviceInfo;
 
+@end
+
+@interface ETGTranslateViewportMessage : ETGMessage
+- (id)initWithTranslation:(CGPoint)translation;
+- (CGPoint)translation;
 @end
